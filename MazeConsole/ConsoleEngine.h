@@ -1,3 +1,31 @@
+/*
+OneLoneCoder.com - Command Line Game Engine
+"Who needs a frame buffer?" - @Javidx9
+Disclaimer
+~~~~~~~~~~
+I don't care what you use this for. It's intended to be educational, and perhaps
+to the oddly minded - a little bit of fun. Please hack this, change it and use it
+in any way you see fit. BUT, you acknowledge that I am not responsible for anything
+bad that happens as a result of your actions. However, if good stuff happens, I
+would appreciate a shout out, or at least give the blog some publicity for me.
+Cheers!
+Background
+~~~~~~~~~~
+If you've seen any of my videos - I like to do things using the windows console. It's quick
+and easy, and allows you to focus on just the code that matters - ideal when you're
+experimenting. Thing is, I have to keep doing the same initialisation and display code
+each time, so this class wraps that up.
+Author
+~~~~~~
+Twitter: @javidx9
+Blog: www.onelonecoder.com
+Video:
+~~~~~~
+https://youtu.be/cWc0hgYwZyc
+Added mouse support: https://youtu.be/tdqc9hZhHxM
+Last Updated: 30/08/2017
+*/
+
 #pragma once
 #pragma comment(lib, "winmm.lib")
 
