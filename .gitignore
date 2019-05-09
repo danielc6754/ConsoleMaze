@@ -5,3 +5,4 @@ MazeConsole/Debug/*
 .vs/*
 x64/*
 enc_temp_folder
+MazeConsole/MazeConsole.vcxproj.filters
