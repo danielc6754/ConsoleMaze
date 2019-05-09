@@ -31,24 +31,28 @@ private:
 protected:
 	virtual bool OnUserCreate() {
 		// Maze parameters
-		m_nMazeWidth = 20;
-		m_nMazeHeight = 15;
+		m_nMazeWidth = 40;
+		m_nMazeHeight = 25;
 
 		m_maze = new int[m_nMazeWidth * m_nMazeHeight];
 		// Set all maze coordinates to 0
 		memset(m_maze, 0x00, m_nMazeWidth * m_nMazeHeight * sizeof(int));
 
-		m_stack.push(make_pair(0, 0));
-		m_maze[0] = CELL_VISITED;
+		// Random starting cell
+		int x = rand() % m_nMazeWidth;
+		int y = rand() % m_nMazeHeight;
+		m_stack.push(make_pair(x, y));
+		m_maze[y * m_nMazeWidth + x] = CELL_VISITED;
 		m_nVisitedCells = 1;
-
+		
 		m_nPathWidth = 3;
 
 		return true;
 	}
 
 	virtual bool OnUserUpdate(float fElapsedTime) {
-		this_thread::sleep_for(10ms);
+		// Add Slow down for visual
+		//this_thread::sleep_for(10ms);
 
 		// lambda function to calculate the offset without having to type it constantly
 		// Language forces code to where its needed using lambda over macro
@@ -144,6 +148,11 @@ protected:
 				}
 			}
 		}
+
+		// Draw Current Position
+		for (int cy = 0; cy < m_nPathWidth; cy++)
+			for (int cx = 0; cx < m_nPathWidth; cx++)
+				Draw(m_stack.top().first * (m_nPathWidth + 1) + cx, m_stack.top().second * (m_nPathWidth + 1) + cy, PIXEL_SOLID, FG_GREEN);
 
 		return true;
 	}
