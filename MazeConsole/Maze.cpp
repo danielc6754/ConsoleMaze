@@ -5,8 +5,12 @@ using namespace std;
 class Console_Maze : public ConsoleTemplateEngine {
 public:
 	Console_Maze() {
-		//m_sAppName = L"Maze";
+		m_sAppName = L"Maze";
 	}
+private:
+	int m_nMazeWidth;
+	int m_nMazeHeight;
+	int *m_maze;
 
 protected:
 	virtual bool OnUserCreate() {
